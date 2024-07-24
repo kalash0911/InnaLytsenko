@@ -45,3 +45,39 @@ body {
         }
     }
 }
+
+.title {
+    margin-bottom: 60px;
+    color: $main_black;
+    font: $bold 48px / 1.2 $Cinzel;
+    text-transform: uppercase;
+
+    @include media('<tablet_x') {
+        font-size: 32px;
+    }
+
+    @include media('<phone') {
+        margin-bottom: 36px;
+        font-size: 24px;
+    }
+}
+
+.def-pag {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding-top: 40px;
+
+    .swiper-pagination-bullet {
+        min-width: 10px;
+        height: 10px;
+        margin: 0 !important;
+        background-color: $main_black;
+        opacity: 0.3;
+        transition: $anim_03;
+    }
+
+    .swiper-pagination-bullet-active {
+        opacity: 1;
+    }
+}

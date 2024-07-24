@@ -120,3 +120,99 @@
         }
     }
 }
+
+/* --------------------card-section------------------ */
+
+.card-section {
+    padding: 120px 0 60px 0;
+
+    @include media('<tablet_x') {
+        padding: 25px 0;
+    }
+
+    .title {
+        max-width: 750px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .cardSlider {
+        overflow: visible;
+    }
+
+    .swiper-wrapper {
+        counter-reset: my-awesome-counter;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        @include media('>=tablet_s') {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 50px;
+        }
+
+        @include media('<widescreen') {
+            gap: 24px;
+        }
+
+        @include media('<tablet_s') {
+            gap: 0;
+        }
+    }
+
+    .swiper-slide {
+        counter-increment: my-awesome-counter;
+        position: relative;
+        display: flex;
+
+        &:before {
+            content: counter(my-awesome-counter);
+            position: absolute;
+            right: -9px;
+            bottom: -9px;
+            display: grid;
+            place-items: center;
+            min-width: 50px;
+            height: 50px;
+            background-color: $main_white;
+            border-radius: 50%;
+            color: $main_black;
+            font: $bold 24px / 1.2 $Quattrocento;
+
+            @include media('<phone') {
+                font-size: 20px;
+            }
+        }
+
+        &:nth-child(-n + 9)::before {
+            content: '0' counter(my-awesome-counter);
+        }
+    }
+
+    .item {
+        flex: 1 1 auto;
+        min-height: 150px;
+        display: grid;
+        place-items: center;
+        padding: 20px 30px;
+        background-color: $bg_gray;
+        border-radius: 16px;
+    }
+
+    .item-title {
+        margin: 0;
+        color: $accent_violet;
+        font: $bold 18px / 1.2 $Quattrocento;
+        text-align: center;
+    }
+
+    .def-pag {
+        display: none;
+
+        @include media('<tablet_s') {
+            display: flex;
+        }
+    }
+}
