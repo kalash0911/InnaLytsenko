@@ -193,7 +193,7 @@
 
     .item {
         flex: 1 1 auto;
-        min-height: 150px;
+        min-height: 130px;
         display: grid;
         place-items: center;
         padding: 20px 30px;
@@ -214,5 +214,193 @@
         @include media('<tablet_s') {
             display: flex;
         }
+    }
+}
+
+/* --------------------about-section----------------- */
+
+.about-section {
+    padding: 60px 0 120px 0;
+
+    @include media('<tablet_x') {
+        padding: 25px 0 50px 0;
+    }
+
+    .container {
+        @include media('<phone') {
+            padding: 0;
+        }
+    }
+
+    .title {
+        @include media('<phone') {
+            padding: 0 40px;
+        }
+    }
+
+    .block {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 30px;
+        margin-bottom: 80px;
+
+        @include media('<tablet_x') {
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 40px;
+        }
+    }
+
+    .img-box {
+        position: relative;
+        width: 100%;
+        max-width: 550px;
+        min-height: 700px;
+        border-radius: 20px;
+        overflow: hidden;
+
+        @include media('<tablet_x') {
+            max-width: 80%;
+            min-height: 550px;
+        }
+
+        @include media('<phone') {
+            max-width: 100%;
+            border-radius: 0;
+            min-height: 450px;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+    }
+
+    .text-box {
+        width: 100%;
+        max-width: 470px;
+
+        @include media('<tablet_x') {
+            max-width: 100%;
+        }
+
+        @include media('<phone') {
+            padding: 0 40px;
+        }
+    }
+
+    .sub-title {
+        margin-bottom: 24px;
+        font: $bold 24px / 1.2 $Quattrocento;
+
+        @include media('<phone') {
+            font-size: 20px;
+        }
+    }
+
+    .text {
+        margin-bottom: 24px;
+        font: $regular 16px / 1.2 $Quattrocento;
+    }
+
+    .list-box {
+        padding: 30px;
+        background-color: rgba($bg_gray, 0.7);
+        border-radius: 20px;
+        box-shadow: 0px 4px 16px 0px #0000001f;
+
+        @include media('<phone') {
+            padding: 13px;
+        }
+    }
+
+    .list-title {
+        margin-bottom: 20px;
+        color: $accent_gold;
+        font: $bold 36px / 1.2 $Quattrocento;
+
+        @include media('<phone') {
+            font-size: 20px;
+        }
+    }
+
+    .list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .list-item {
+        position: relative;
+        font: $regular 18px / 1.2 $Quattrocento;
+
+        @include media('<phone') {
+            font-size: 16px;
+        }
+
+        &::before {
+            content: '✓ ';
+            font-weight: $bold;
+        }
+    }
+
+    .banner {
+        position: relative;
+        width: 100%;
+        max-width: 752px;
+        margin: 0 auto 40px auto;
+        padding: 30px 50px;
+        background-color: $accent_violet;
+        border-radius: 16px;
+        overflow: hidden;
+
+        @include media('<phone') {
+            margin-bottom: 30px;
+            padding: 20px 40px;
+            border-radius: 0;
+        }
+    }
+
+    .banner-text {
+        margin: 0;
+        color: $main_white;
+        text-align: center;
+        font: $regular 24px / 1.2 $Quattrocento;
+
+        @include media('<phone') {
+            font-size: 18px;
+        }
+    }
+
+    .bg-icon {
+        position: absolute;
+
+        &.bg19 {
+            top: -12px;
+            left: -21px;
+        }
+
+        &.bg17 {
+            top: -8px;
+            right: -34px;
+        }
+
+        &.bg18 {
+            bottom: -71px;
+            right: -25px;
+        }
+    }
+
+    .btn-wrap {
+        text-align: center;
     }
 }
