@@ -404,3 +404,214 @@
         text-align: center;
     }
 }
+
+/* --------------------course-section---------------- */
+
+.course-section {
+    padding: 120px 0;
+    background-color: $bg_gray;
+
+    @include media('<tablet_x') {
+        padding: 50px 0;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .block {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .text-box {
+        width: 100%;
+        max-width: 450px;
+        min-width: 450px;
+
+        @include media('<tablet_x') {
+            max-width: 100%;
+            min-width: 0;
+        }
+    }
+
+    .text {
+        margin-bottom: 40px;
+        font: $regular 16px / 1.2 $Quattrocento;
+
+        @include media('<phone') {
+            margin-bottom: 16px;
+        }
+    }
+
+    .img-box {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+        min-height: 450px;
+        border-bottom-left-radius: 50px;
+        overflow: hidden;
+
+        @include media('<tablet_x') {
+            display: none;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        @include media('<phone') {
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+    }
+
+    .list-item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font: $regular 18px / 1.2 $Quattrocento;
+
+        @include media('<tablet_x') {
+            font-size: 16px;
+        }
+
+        @include media('<phone') {
+            max-width: max-content;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: -6px;
+            width: calc(100% - 50px);
+            height: 2px;
+            background-color: $accent_gold;
+
+            @include media('<phone') {
+                width: 100%;
+            }
+        }
+
+        &:first-child {
+            &::after {
+                width: 100%;
+            }
+
+            img {
+                display: none;
+            }
+        }
+
+        img {
+            @include media('<phone') {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    .card-title {
+        margin-bottom: 30px;
+        text-align: center;
+        font: $bold 36px / 1.2 $Quattrocento;
+
+        @include media('<tablet_x') {
+            font-size: 28px;
+        }
+
+        @include media('<phone') {
+            margin-bottom: 24px;
+            font-size: 24px;
+        }
+    }
+
+    .card-list {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 76px;
+
+        @include media('<phone') {
+            gap: 18px;
+        }
+    }
+
+    .card-item {
+        width: 100%;
+        max-width: 290px;
+        text-align: center;
+    }
+
+    .card-item-icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2px;
+        margin-bottom: 14px;
+    }
+
+    .line {
+        height: 6px;
+        background-color: $accent_gold;
+
+        &.line1 {
+            width: 52px;
+        }
+
+        &.line2 {
+            width: 41px;
+        }
+
+        &.line3 {
+            width: 31px;
+        }
+
+        &.line4 {
+            width: 5px;
+        }
+    }
+
+    .card-item-title {
+        margin-bottom: 12px;
+        font: $bold 24px / 1.2 $Quattrocento;
+
+        @include media('<tablet_x') {
+            font-size: 20px;
+        }
+
+        @include media('<phone') {
+            font-size: 18px;
+        }
+    }
+
+    .card-item-text {
+        margin: 0;
+        font: $regular 18px / 1.2 $Quattrocento;
+
+        @include media('<phone') {
+            font-size: 16px;
+        }
+    }
+}
