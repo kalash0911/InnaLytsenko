@@ -960,7 +960,7 @@
     }
 }
 
-/* ---------------------error-section----------------- */
+/* ----------------------error-section----------------- */
 
 .error-section {
     min-height: 100vh;
@@ -1029,6 +1029,115 @@
 
         @include media('<phone') {
             font-size: 16px;
+        }
+    }
+}
+
+/* -----------------------page-section----------------- */
+
+.page-section {
+    background-color: $bg_gray;
+    padding: 190px 0 100px 0;
+
+    @include media('<tablet_x') {
+        padding: 100px 0 50px 0;
+    }
+
+    .main-title {
+        text-align: center;
+        font: $bold 48px / 1.2 $Cinzel;
+
+        @include media('<tablet_x') {
+            font-size: 32px;
+        }
+    }
+
+    .block {
+        h2 {
+            @include media('<tablet_x') {
+                font-size: 24px;
+            }
+        }
+
+        h3 {
+            font-weight: $bold;
+
+            @include media('<tablet_x') {
+                font-size: 18px;
+            }
+        }
+
+        h4 {
+            @include media('<tablet_x') {
+                font-size: 16px;
+            }
+        }
+
+        h5 {
+            @include media('<tablet_x') {
+                font-size: 14px;
+            }
+        }
+
+        h6 {
+            @include media('<tablet_x') {
+                font-size: 12px;
+            }
+        }
+
+        a {
+            color: $accent_gold;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+
+            li {
+                margin-bottom: 3px;
+                font: $regular 18px / 1.2 $Quattrocento;
+
+                @include media('<tablet_x') {
+                    font-size: 14px;
+                }
+
+                &::before {
+                    content: '✓ ';
+                    font-weight: $bold;
+                }
+            }
+        }
+
+        ol {
+            padding: 0;
+            list-style: none;
+            counter-reset: my-awesome-counter;
+
+            li {
+                margin-bottom: 3px;
+                font: $regular 18px / 1.2 $Quattrocento;
+                counter-increment: my-awesome-counter;
+
+                @include media('<tablet_x') {
+                    font-size: 14px;
+                }
+
+                &:before {
+                    content: counter(my-awesome-counter) '. ';
+                }
+
+                &:nth-child(-n + 9)::before {
+                    content: '0' counter(my-awesome-counter) '. ';
+                }
+            }
+        }
+
+        img {
+            margin-bottom: 30px;
         }
     }
 }
