@@ -43,6 +43,16 @@ body {
             color: $main_white;
             background-color: $main_black;
         }
+
+        &.rev {
+            color: $main_white;
+            background-color: $main_black;
+
+            &:hover {
+                color: $main_black;
+                background-color: $main_white;
+            }
+        }
     }
 }
 

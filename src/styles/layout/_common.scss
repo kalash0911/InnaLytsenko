@@ -959,3 +959,76 @@
         margin-top: 40px;
     }
 }
+
+/* ---------------------error-section----------------- */
+
+.error-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 100px 0;
+    background-color: $bg_gray;
+
+    .content {
+        position: relative;
+        text-align: center;
+        max-width: 710px;
+    }
+
+    .bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 800px;
+        height: 1000px;
+
+        @include media('<phone') {
+            width: 500px;
+            height: 700px;
+        }
+    }
+
+    .block {
+        position: relative;
+        z-index: 1;
+    }
+
+    .main-title {
+        margin-bottom: 30px;
+        font: $bold 190px / 1.2 $Cinzel;
+
+        @include media('<tablet_x') {
+            font-size: 150px;
+        }
+
+        span {
+            color: $accent_gold;
+        }
+    }
+
+    .main-sub-title {
+        margin-bottom: 30px;
+        font: $bold 48px / 1.2 $Cinzel;
+        text-transform: uppercase;
+
+        @include media('<tablet_x') {
+            font-size: 38px;
+        }
+
+        @include media('<phone') {
+            font-size: 22px;
+        }
+    }
+
+    .text {
+        max-width: 480px;
+        margin: 0 auto 30px auto;
+        font: $regular 18px / 1.2 $Quattrocento;
+
+        @include media('<phone') {
+            font-size: 16px;
+        }
+    }
+}
