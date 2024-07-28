@@ -926,3 +926,36 @@
         }
     }
 }
+
+/* ----------------------info-section------------------ */
+
+.info-section {
+    padding: 120px 0;
+    background-color: $bg_gray;
+
+    @include media('<tablet_x') {
+        padding: 50px 0;
+    }
+
+    .content {
+        text-align: center;
+    }
+
+    .title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-bottom: 14px;
+
+        img {
+            @include media('<tablet_x') {
+                max-width: 32px;
+            }
+        }
+    }
+
+    .btn-wrap {
+        margin-top: 40px;
+    }
+}
