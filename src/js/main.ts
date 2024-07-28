@@ -41,3 +41,38 @@ destroySlidersOnResize(".cardSlider", 599, {
       clickable: true,
     },
 });
+
+// @ts-ignore
+destroySlidersOnResize(".reviewsSlider", 999999, {
+  spaceBetween: 54,
+  slidesPerView: 3,
+
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 24,
+    },
+    608: {
+      spaceBetween: 24,
+      slidesPerView: 1.5,
+    },
+    768: {
+      spaceBetween: 24,
+      slidesPerView: 2,
+    },
+    1100: {
+      spaceBetween: 54,
+      slidesPerView: 3,
+    },
+  },
+
+  navigation: {
+    nextEl: '.reviews-next',
+    prevEl: '.reviews-prev',
+  },
+  
+  pagination: {
+    el: '.reviews-pag',
+    clickable: true,
+  },
+});

@@ -75,9 +75,56 @@ body {
         background-color: $main_black;
         opacity: 0.3;
         transition: $anim_03;
+
+        &:hover {
+            background-color: $accent_gold;
+        }
     }
 
     .swiper-pagination-bullet-active {
         opacity: 1;
+    }
+}
+
+.def-arrows {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 40px;
+
+    .def-arrow {
+        width: 50px;
+        height: 50px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        border: 1px solid $main_black;
+        transition: $anim_03;
+        cursor: pointer;
+
+        svg {
+            stroke: $main_black;
+            transition: $anim_03;
+        }
+
+        &:hover {
+            border-color: $accent_gold;
+
+            svg {
+                stroke: $accent_gold;
+            }
+        }
+    }
+
+    .swiper-button-disabled {
+        opacity: 0.7;
+        cursor: no-drop;
+
+        &:hover {
+            border-color: $main_black;
+
+            svg {
+                stroke: $main_black;
+            }
+        }
     }
 }
