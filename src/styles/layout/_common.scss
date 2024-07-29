@@ -57,7 +57,13 @@
         }
 
         strong {
-            color: $accent_gold;
+            transition: color 1s ease 1s;
+        }
+
+        &.show {
+            strong {
+                color: $accent_gold;
+            }
         }
     }
 
@@ -160,12 +166,31 @@
         @include media('<tablet_s') {
             gap: 0;
         }
+
+        &.show {
+            .swiper-slide {
+                opacity: 1;
+
+                &:before {
+                    min-width: 50px;
+                    height: 50px;
+                    animation-name: color;
+                    animation-duration: 1s;
+                    animation-fill-mode: forwards;
+                }
+            }
+        }
     }
 
     .swiper-slide {
         counter-increment: my-awesome-counter;
         position: relative;
         display: flex;
+        opacity: 0;
+        transition: opacity 0.7s ease;
+        @include delay;
+        @include delayBefore;
+        @include delayAnimationBefore;
 
         &:before {
             content: counter(my-awesome-counter);
@@ -174,15 +199,28 @@
             bottom: -9px;
             display: grid;
             place-items: center;
-            min-width: 50px;
-            height: 50px;
+            min-width: 0px;
+            height: 0px;
             background-color: $main_white;
             border-radius: 50%;
-            color: $main_black;
+            color: transparent;
             font: $bold 24px / 1.2 $Quattrocento;
+            transition: all 0.7s ease;
 
             @include media('<phone') {
                 font-size: 20px;
+            }
+        }
+
+        @keyframes color {
+            0% {
+                color: transparent;
+            }
+            50% {
+                color: transparent;
+            }
+            100% {
+                color: $main_black;
             }
         }
 
@@ -562,6 +600,15 @@
         width: 100%;
         max-width: 290px;
         text-align: center;
+
+        &.show {
+            .line,
+            .card-item-title,
+            .card-item-text {
+                opacity: 1;
+                transform: translate(0);
+            }
+        }
     }
 
     .card-item-icon {
@@ -576,26 +623,38 @@
         height: 6px;
         background-color: $accent_gold;
 
+        opacity: 0;
+        transition: $anim_07;
+
         &.line1 {
             width: 52px;
+            transition-delay: 0.3s;
         }
 
         &.line2 {
             width: 41px;
+            transition-delay: 0.6s;
         }
 
         &.line3 {
             width: 31px;
+            transition-delay: 0.9s;
         }
 
         &.line4 {
             width: 5px;
+            transition-delay: 1.2s;
         }
     }
 
     .card-item-title {
         margin-bottom: 12px;
         font: $bold 24px / 1.2 $Quattrocento;
+
+        transform: translateY(20px);
+        opacity: 0;
+        transition: $anim_07;
+        transition-delay: 1.5s;
 
         @include media('<tablet_x') {
             font-size: 20px;
@@ -609,6 +668,11 @@
     .card-item-text {
         margin: 0;
         font: $regular 18px / 1.2 $Quattrocento;
+
+        transform: translateY(20px);
+        opacity: 0;
+        transition: $anim_07;
+        transition-delay: 2s;
 
         @include media('<phone') {
             font-size: 16px;
@@ -667,14 +731,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-
-            @include media('<tablet_x') {
-                object-position: top;
-            }
-
-            @include media('<phone') {
-                object-position: center;
-            }
+            object-position: top;
         }
     }
 
