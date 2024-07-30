@@ -1,1 +1,126 @@
-#footer {}
+#footer {
+    padding: 60px 0;
+    background-color: $main_white;
+
+    @include media('<phone') {
+        padding: 50px 0;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 50px;
+
+        @include media('<phone') {
+            gap: 44px;
+        }
+    }
+
+    .menu {
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        flex-wrap: wrap;
+        gap: 50px;
+        column-gap: 50px;
+        row-gap: 12px;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        @include media('<widescreen') {
+            width: 100%;
+            justify-content: flex-start;
+            order: 3;
+        }
+
+        @include media('<phone') {
+            justify-content: space-between;
+        }
+    }
+
+    .link {
+        position: relative;
+        font: $bold 16px / 1.1 $Quattrocento;
+
+        @include media('<phone') {
+            font-size: 18px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: $accent_gold;
+            transition: $anim_03;
+            opacity: 0;
+        }
+
+        &:hover {
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+    .socials {
+        width: 70%;
+        display: flex;
+        justify-content: end;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        @include media('<widescreen') {
+            width: max-content;
+            order: 2;
+        }
+    }
+
+    .text {
+        width: 24%;
+        display: inline-flex;
+        align-items: end;
+        gap: 5px;
+        margin: 0;
+
+        @include media('<widescreen') {
+            width: 100%;
+            order: 4;
+        }
+
+        a {
+            &:hover {
+                color: $accent_gold;
+            }
+        }
+    }
+
+    .btn {
+        padding: 13px 32px;
+
+        @include media('<tablet_x') {
+            padding: 0;
+            border: none;
+            min-width: 0;
+            background: none;
+
+            &:hover {
+                img {
+                    filter: none;
+                }
+            }
+        }
+    }
+
+    .btn-text,
+    .arrow {
+        @include media('<tablet_x') {
+            display: none;
+        }
+    }
+}
