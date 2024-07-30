@@ -1,11 +1,40 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     color: $main_black;
     background-color: $main_white;
+
+    &.body_lock {
+        overflow: hidden;
+    }
 }
 
 #wrapper {
     position: relative;
     overflow: hidden;
+}
+
+.overflow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transition: $anim_03;
+
+    .active & {
+        z-index: 0;
+        visibility: visible;
+        opacity: 1;
+    }
 }
 
 .container {

@@ -805,7 +805,7 @@
         padding: 40px 24px;
         border-radius: 20px;
         border: 2px solid $accent_gold;
-        box-shadow: 0px 4px 16px 0px $accent_gold;
+        box-shadow: 0px 4px 16px 0px rgba($accent_gold, 0.5);
         overflow: hidden;
 
         @include media('<phone') {
