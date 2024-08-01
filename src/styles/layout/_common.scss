@@ -1005,9 +1005,21 @@
         gap: 16px;
         margin-bottom: 14px;
 
+        @include media('<tablet_s') {
+            position: relative;
+            padding-right: 50px;
+        }
+
         img {
+            max-width: 60px;
+
             @include media('<tablet_x') {
                 max-width: 32px;
+            }
+
+            @include media('<tablet_s') {
+                position: absolute;
+                right: 0;
             }
         }
     }
