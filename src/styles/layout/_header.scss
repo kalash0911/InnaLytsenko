@@ -1,12 +1,19 @@
-#header {
-    position: absolute;
+.header {
+    position: fixed;
     top: 0;
     width: 100%;
     padding: 25px 0;
     z-index: 10;
+    transition: $anim_03;
 
     @include media('<phone') {
         padding: 20px 0;
+    }
+
+    &.scroll {
+        padding: 10px 0;
+        background-color: rgba($main_white, 0.9);
+        box-shadow: 0 0 15px rgba($main_black, 0.1);
     }
 
     .content {

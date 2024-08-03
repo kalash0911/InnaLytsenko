@@ -21,6 +21,37 @@ for (let i = 0; i < linkClose.length; ++i) {
   });
 }
 
+// Header scroll
+
+const header: HTMLElement | null = document.getElementById('header');
+
+if (header) {
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+      header.classList.add('scroll');
+    } else {
+      header.classList.remove('scroll');
+    }
+  });
+}
+
+// For remove height header when scroll to #anchor
+
+document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector('header');
+  const headerHeight = header ? header.offsetHeight : 0;
+
+  window.addEventListener('hashchange', () => {
+      const targetId = location.hash.substring(1);
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+          const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - headerHeight;
+          window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+      }
+  });
+});
+
 // Scroll anim
 
 document.addEventListener('DOMContentLoaded', () => {
