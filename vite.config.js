@@ -20,6 +20,8 @@ export default defineConfig({
     rollupOptions: {
       input,
     },
+    minify: false,
+    cssMinify: false,
     outDir: '../dist/',
     emptyOutDir: true,
   },
